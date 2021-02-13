@@ -4,6 +4,7 @@
   "description": "update from master",
   "main": "xlsx2json.js",
   "dependencies": {
+    "@vue/cli-service": "^4.5.11",
     "axios": "^0.21.1",
     "dayjs": "^1.10.4",
     "vue-chartjs": "^3.5.1",
@@ -13,7 +14,9 @@
     "tailwindcss": "^1.5.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
   },
   "repository": {
     "type": "git",
