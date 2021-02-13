@@ -15,8 +15,8 @@
       </div>
     </div>
     <div id="quote" class="flex flex-col">
-      <div>Time parking: {{ parkingTime }}</div>
-      <div>Total Amount: {{ totalSum }}</div>
+      <div>Time parking: {{ time }}</div>
+      <div>Total Amount: {{ sum }}</div>
     </div>
   </div>
 </template>

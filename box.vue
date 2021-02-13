@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex flex-col items-center justify-center">
     <div
-      v-if="item.Parking_lot_status"
+      v-if="item.Parking_lot_status == '1'"
       class="w-full bg-green-200 box-h text-center p-5"
     >
       <div>No.</div>
@@ -17,7 +17,7 @@
     <div class="mt-2 flex-1">
       Total Parked: {{ item.Parking_lot_total_parked }}
     </div>
-    <div class="mt-2 flex-1"></div>
+    <div class="mt-2 flex-1">Total Amount: {{ item.Total_amount }}</div>
   </div>
 </template>
 <style>

@@ -1,7 +1,7 @@
 <template>
   <div class="p-5">
     <div class="w-full flex border-2 border-gray-300 shadow-md mb-10">
-      <div class="w-full" v-for="(item, index) in mock" :key="item.message">
+      <div class="w-full" v-for="(item, index) in items" :key="item.message">
         <box :item="item" :index="index"></box>
       </div>
     </div>
@@ -9,7 +9,7 @@
       <receipt :item="item"></receipt>
     </div>
     <div
-      class="w-full bg-white border-2 border-gray-300 p-6 rounded-md tracking-wide shadow-lg"
+      class="w-full bg-white border-2 border-gray-300 p-6 rounded-md tracking-wide shadow-lg mt-5"
     >
       <div id="header" class="flex items-center mb-4">
         <!-- <img
@@ -38,36 +38,6 @@ import axios from "axios";
 import Box from "./box";
 import receipt from "./receipt";
 // import LineChart from "./LineChart.vue";
-const mock = [
-  {
-    Parking_lot_ID: 1,
-    Parking_lot_status: 0,
-    Parking_lot_total_parked: 13,
-    Parking_lot_update_time: 1613204234068,
-    Total_amount: 220.0,
-  },
-  {
-    Parking_lot_ID: 2,
-    Parking_lot_status: 0,
-    Parking_lot_total_parked: 1,
-    Parking_lot_update_time: 1613204200000,
-    Total_amount: 40.0,
-  },
-  {
-    Parking_lot_ID: 3,
-    Parking_lot_status: 1,
-    Parking_lot_total_parked: 1,
-    Parking_lot_update_time: 1613204239068,
-    Total_amount: 20.0,
-  },
-  {
-    Parking_lot_ID: 4,
-    Parking_lot_status: 0,
-    Parking_lot_total_parked: 0,
-    Parking_lot_update_time: 0,
-    Total_amount: 0,
-  },
-];
 export default {
   components: {
     Box,
@@ -75,7 +45,6 @@ export default {
   },
   mounted() {
     setInterval(this.fetch, 1000);
-    this.report();
     this.chart = {
       labels: ["January", "February", "March", "April", "May", "June", "July"],
       datasets: [
@@ -101,15 +70,18 @@ export default {
           receipt.time = res.data.result[i].Parking_lot_update_time;
           receipt.id = i + 1;
           this.receipt = [...this.receipt, receipt];
+          setTimeout(() => {
+            this.receipt = this.receipt.filter((item) => item.id != i + 2);
+          }, 2000);
         }
       }
-
       this.items = res.data.result;
+      this.report();
     },
     report() {
       let totalParking = 0;
       let totalSum = 0;
-      mock.map((item) => {
+      this.items.map((item) => {
         totalParking += item.Parking_lot_total_parked;
         totalSum += item.Total_amount;
       });
@@ -123,11 +95,7 @@ export default {
       receipt: [],
       totalParking: 0,
       totalSum: 0,
-      items: [
-        { Parking_lot_ID: "Foo", Parking_lot_status: 1, Total_amount: "10" },
-        { message: "Bar" },
-      ],
-      mock,
+      items: [],
     };
   },
 };
