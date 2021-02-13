@@ -18,13 +18,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dragonfly161518/playgrounded.git"
+    "url": "git+https://github.com/17012/playgrounded.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Dragonfly161518/playgrounded/issues"
+    "url": "https://github.com/17012/playgrounded/issues"
   },
-  "homepage": "https://github.com/Dragonfly161518/playgrounded#readme"
+  "homepage": "https://github.com/17012/playgrounded#readme"
 }
