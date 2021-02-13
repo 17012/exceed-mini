@@ -1,0 +1,29 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "update from master",
+  "main": "xlsx2json.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dayjs": "^1.10.4",
+    "vue-chartjs": "^3.5.1",
+    "xlsx": "^0.16.4"
+  },
+  "devDependencies": {
+    "tailwindcss": "^1.5.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dragonfly161518/playgrounded.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dragonfly161518/playgrounded/issues"
+  },
+  "homepage": "https://github.com/Dragonfly161518/playgrounded#readme"
+}
