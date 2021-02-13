@@ -4,12 +4,16 @@ To serve localhost using vue cli service.
 Installing by.
 
 > npm install -g @vue/cli @vue/cli-service-global
-> or
+
+or
+
 > yarn global add @vue/cli @vue/cli-service-global
 
 Installing dependency package.
 > npm install
-> or
+
+or
+
 > yarn
 
 serve app
