@@ -1,8 +1,6 @@
 {
-  "name": "playground",
+  "name": "excedd",
   "version": "1.0.0",
-  "description": "update from master",
-  "main": "xlsx2json.js",
   "dependencies": {
     "@vue/cli-service": "^4.5.11",
     "axios": "^0.21.1",
